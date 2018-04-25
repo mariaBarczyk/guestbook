@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Guest Book</title>
+        <link rel="stylesheet" type="text/css" href="statics/css/style.css"/>
+    </head>
+
+    <body>
+        <div id="container">
+            <header>
+                <h1>GuestBook</h1>
+            </header>
+
+            <form method="POST">
+                <h5>Name:</h5>
+                <input  type="text" name="name" value="...">
+                <br>
+                <h5>Message:</h5>
+                <input type="text" name="message" value="...">
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+            <ol>
+                {% for entry in entries %}
+                    <li>{{entry.getMessage()}}    </b><br>
+                    Name: <b> {{entry.getName()}} </b><br>
+                    {{entry.getDate()}} <br></li>
+                {% endfor %}
+            </ol>
+        </div>
+    </body>
+</html>
